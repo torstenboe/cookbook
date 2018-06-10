@@ -1,6 +1,6 @@
 #add service group/user
-addgroup service-runner
-useradd devops-service --create-home --shell /bin/bash --groups service-runner
+addgroup myservice
+useradd devops-service --create-home --shell /bin/bash --groups myservice
 #gpasswd -a devops-service sudo #allowing sudo requires password, and not a good idea for a service account.
 mkdir /home/devops-service/.ssh
 chmod 700 /home/devops-service/.ssh
