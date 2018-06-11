@@ -1,8 +1,8 @@
 #add service group/user
-addgroup my-service
-useradd my-user --create-home --shell /bin/bash --groups my-service
-#gpasswd -a my-user sudo #allowing sudo requires password, and not a good idea for a service account.
-mkdir /home/my-user/.ssh
-chmod 700 /home/my-user/.ssh
-cat /home/opc/.ssh/authorized_keys >> /home/my-user/.ssh/authorized_keys
-chown my-user:my-user /home/my-user -R
+groupadd <group>
+useradd -m -p <password> -s /bin/bash -g my-service <user>
+#gpasswd -a <user> sudo #allowing sudo requires password, and not a good idea for a service account.
+mkdir /home/<user>/.ssh
+chmod 700 /home/<user>/.ssh
+cat /home/opc/.ssh/authorized_keys >> /home/<user>/.ssh/authorized_keys
+chown <user>:<user> /home/<user> -R
